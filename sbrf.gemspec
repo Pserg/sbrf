@@ -6,7 +6,7 @@ require 'sbrf/version'
 Gem::Specification.new do |spec|
   spec.name          = "sbrf"
   spec.version       = Sbrf::VERSION
-  spec.authors       = ["kunashir"]
+  spec.authors       = ["Progress-engine"]
   spec.email         = ["kunashir@list.ru"]
 
   spec.summary       = %q{Client for Sberbank equaring}

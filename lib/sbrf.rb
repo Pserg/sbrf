@@ -59,7 +59,11 @@ module Sbrf
 
   class << self
     def base_url
-      'https://3dsec.sberbank.ru/payment/rest/'
+      if test_mode
+        'https://3dsec.sberbank.ru/payment/rest/'
+      else
+        'https://securepayments.sberbank.ru/payment/rest'
+      end
     end
 
     def password=(password)
@@ -70,6 +74,14 @@ module Sbrf
       @user_name = user_name
     end
 
+    def test_mode
+      @test_mode
+    end
+
+    def test_mode=(test_mode)
+      @test_mode = test_mode
+    end
+    
     def register_do(params)
       raise ArgumentError,
         "#register_do got unexpected object type: #{params.class.name}" unless params.is_a? Hash

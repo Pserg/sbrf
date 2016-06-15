@@ -5,6 +5,7 @@ describe Sbrf do
   before :each do
     Sbrf.user_name = 'sbrf_user_name'
     Sbrf.password = 'sbrf_password'
+    Sbrf.test_mode = true
   end
 
   describe 'register_do' do
