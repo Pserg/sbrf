@@ -62,7 +62,7 @@ module Sbrf
       if test_mode
         'https://3dsec.sberbank.ru/payment/rest/'
       else
-        'https://securepayments.sberbank.ru/payment/rest'
+        'https://securepayments.sberbank.ru/payment/rest/'
       end
     end
 
@@ -81,7 +81,7 @@ module Sbrf
     def test_mode=(test_mode)
       @test_mode = test_mode
     end
-    
+
     def register_do(params)
       raise ArgumentError,
         "#register_do got unexpected object type: #{params.class.name}" unless params.is_a? Hash
