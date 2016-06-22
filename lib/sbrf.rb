@@ -1,6 +1,5 @@
 require "sbrf/version"
 require 'rest-client'
-require 'byebug'
 
 module Sbrf
   class SbrfResponse
