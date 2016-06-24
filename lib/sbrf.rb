@@ -74,6 +74,14 @@ module Sbrf
       @return_url = url
     end
 
+    def fail_url
+      @fail_url
+    end
+
+    def fail_url=(url)
+      @fail_url = url
+    end
+
     def password=(password)
       @password = password
     end
