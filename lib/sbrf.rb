@@ -2,7 +2,6 @@ require "sbrf/version"
 require 'rest-client'
 
 module Sbrf
-  attr_accessor :return_url, :fail_url
 
   class SbrfResponse
     attr_accessor :error_code, :error_message
@@ -65,6 +64,14 @@ module Sbrf
       else
         'https://securepayments.sberbank.ru/payment/rest/'
       end
+    end
+
+    def return_url
+      @return_url
+    end
+
+    def return_url=(url)
+      @return_url = url
     end
 
     def password=(password)
