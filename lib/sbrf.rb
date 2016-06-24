@@ -2,6 +2,8 @@ require "sbrf/version"
 require 'rest-client'
 
 module Sbrf
+  attr_accessor :return_url, :fail_url
+
   class SbrfResponse
     attr_accessor :error_code, :error_message
     def initialize(attributes={})
@@ -85,6 +87,8 @@ module Sbrf
       raise ArgumentError,
         "#register_do got unexpected object type: #{params.class.name}" unless params.is_a? Hash
       check_accounts_data
+      params[:returnUrl] = return_url if return_url && !params.include?(:returnUrl)
+      params[:failUrl] = fail_url if fail_url && !params.include?(:failUrl)
       required_params = [:orderNumber, :amount, :returnUrl]
       missing_params = required_params.inject([]) do |ans, key|
         ans << key unless params.keys.include?(key)
